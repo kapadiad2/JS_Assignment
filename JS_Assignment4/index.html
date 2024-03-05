@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <script>
+
+        //task 1
+
+
+        for (i = 0; i <= 200; i++) {
+            if (i % 2 == 0) {
+                console.log('The number ' + i + ' is Even');
+            } else {
+                console.log('The number ' + i + ' is odd');
+            }
+        }
+
+        //task 2
+
+
+        async function doSomething() {
+            let A = await dance(); // takes 11 seconds
+            let B = await danceAgain(); // takes 44 seconds
+            let C = await work(); // takes 4 seconds
+            return doSomethingElse();
+        }
+
+        async function doSomethingElse() {
+            let results = await Promise.all([dance, danceAgain, work]);
+            return results.reduce((total, value) => total * value);
+        }
+
+        // ------------ANSWER-----------------//
+        // The above snippet of code will take total 59 seconds.
+        // The time calculated is 11 + 44 + 4 = 59.
+
+    </script>
+</body>
+
+</html>
